@@ -15,7 +15,6 @@ type MySQLConfig struct {
 }
 
 func InitConnection(cfg *MySQLConfig) (*sql.DB, error) {
-	log.Println(cfg)
 	connString := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v", cfg.Username, cfg.Password, cfg.Host, cfg.Port, cfg.Database)
 
 	db, err := sql.Open("mysql", connString)
